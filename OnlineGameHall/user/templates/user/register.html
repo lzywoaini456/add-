@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #up{
+        height: 80px;
+        margin: 0;
+        line-height: 80px;
+        font-size: 28px;
+        margin-left: 100px;
+    }
+    #down{
+        background-color:#494949;
+        height: 609px;
+        position: relative;
+    }
+    #down .down_l{
+        width: 310px;
+        height: 74px;
+        font-size: 28px;
+        text-align: center;
+        color: white;
+        line-height: 74px;
+        position: absolute;
+        margin-left: 440px;
+        margin-top: 30px;
+        border-bottom: solid 2px orange;
+    }
+    #down_all{
+        margin: 0 auto;
+    }
+    #down .down_r{
+        width: 310px;
+        height: 74px;
+        position: absolute;
+        margin-left: 750px;
+        margin-top: 30px;
+        border-bottom: solid 2px #505050;
+    }
+    #down .reg{
+        width: 450px;
+        height: 400px;
+        position: absolute;
+        margin-left: 525px;
+        margin-top: 150px;
+    }
+    .reg>div>label{
+        display: inline-block;
+        width: 100px; 
+        color: white;
+        font-size: 16px;
+        text-align: right;
+    }
+    .reg input{
+        height: 30px;
+        width: 250px;
+    }
+     #down .reg .p1{
+        margin-top: 20px;
+    }
+    #down .reg .p2{
+        margin-top: 20px;
+    }
+    #down .reg .p3{
+        margin-top: 20px;
+    }
+    #down .reg .p4{
+        margin-top: 20px;
+    }
+    #down .reg .p5{
+        margin-top: 20px;
+    }
+    #fs{
+        font-size: 13px;
+        color: orange;
+    }
+    .reg .zhuce{
+        display: block;
+        border:none;
+        text-align: center;
+        padding: 0;
+        cursor: pointer;
+        font-size: 20px;
+        color:white;
+        margin-left: 60px;
+        margin-top: 50px;
+        background-color: orange;
+        width: 330px;
+        height: 40px;
+    }
+    #fs:hover{
+        color: red;
+    }
+    #a,#b{
+        width: 10px;
+        height: 10px;
+    }
+    #oo{
+        font-size: 10px;
+        color: aquamarine;
+    }
+    </style>
+    <script src="/static/js/common.js"></script>
+</head>
+<body>
+    <div id="up">  
+        网络游戏厅
+    </div>
+    {% if text %}
+        <script>
+            alert('{{ text }}')
+        </script>
+    {% endif %}
+    <form id="down" method="post" action="/user/register">
+        {% csrf_token %}
+
+        <div id="down_all">
+            <div class="down_l">注册通行证</div>
+            <div class="down_r"></div>
+        </div>
+
+
+        <div class="reg">
+            <div class="p1">
+                <label for="">用户名 :&nbsp;</label>
+                <input type="text" id="username" onchange="get_xx()" placeholder="请输入您的用户名" name="username" value="{{ name }}"><span id="oo"></span>
+            </div>
+            <div class="p2">
+                <label for="">登录密码 :&nbsp;</label>
+                <input id="dla" type="password" placeholder="建议大小写+字母+数字" name="password1">
+                <input id="a" onclick="xs()" type="checkbox">显示
+            </div>
+            <div class="p3">
+                <label for="">确认密码 :&nbsp;</label>
+                <input id="dlb" type="password" placeholder="两次密码保持一致" name="password2">
+                <input id="b" onclick="xs()" type="checkbox">显示
+            </div>
+            <div class="p4">
+                <label for="">邮箱 :&nbsp;</label>
+                <input id="na" type="text" placeholder="使用QQ邮箱验证" name="email">
+                <span id="fs" onclick="get_Xhr()">发送</span>
+            </div>
+            <div class="p5">
+                <label for="">验证码 :&nbsp;</label>
+                <input type="text" placeholder="请输入收到的验证码" name="yzm">
+            </div>
+            
+            <input class="zhuce" type="submit" value="注册">
+        </div>
+    </form>
+    <script>
+        function get_Xhr() {
+            var yx = document.getElementById('na').value;
+            //1.创建xhr
+            var xhr = createXhr();
+
+            //2.创建请求
+            xhr.open('get', '/user/get_email?email='+yx, true);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    var response = xhr.responseText;
+                    document.getElementById('fs').innerText = response
+                }// if
+            };// onreadystatechange
+            xhr.send(null)
+        }
+        function get_xx() {
+            var yx = document.getElementById('username').value;
+            //1.创建xhr
+            var xhr = createXhr();
+
+            //2.创建请求
+            xhr.open('get', '/user/get_xx?username='+yx, true);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    var response = xhr.responseText;
+                    document.getElementById('oo').innerText = response
+                }// if
+            };// onreadystatechange
+            xhr.send(null)
+        }
+        function xs() {
+            a = document.getElementById('a');
+            b = document.getElementById('b');
+            dla = document.getElementById('dla');
+            dlb = document.getElementById('dlb');
+            if(a.checked){
+                dla.type = 'text'
+            }else {
+                dla.type = 'password'
+            }
+            if(b.checked){
+                dlb.type = 'text'
+            }else {
+                dlb.type = 'password'
+            }
+
+        }
+    </script>
+
+</body>
+</html>

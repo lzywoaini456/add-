@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <style>
+    #img{
+        position: fixed;
+    }
+    #log{
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        background-color:white;
+        /* 居中 */
+        left: 50%;
+        top: 50%;
+        margin-top: -180px;
+        margin-left: -150px;
+        /* overflow: hidden; */
+    }
+    .top span{
+        display: inline-block;
+        font-size: 28px;
+    }
+    .top a{
+        text-decoration: none;
+        font-size: 30px;
+        float: right;
+        color: #000;
+    }
+    #username,#userpass{
+        width: 180px;
+        height: 30px;
+        position: absolute;
+        margin-top : 10px;
+        margin-left: 10px;
+    }
+    #login{
+
+        width: 260px;
+        height: 40px;
+        background-color: rgb(248, 189, 26);
+        font-size: 24px;
+        color: aliceblue;
+        text-align: center;
+    }
+    #login button{
+        background-repeat:no-repeat;
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-style: none;
+        border-left-style: none;
+        background-color: rgb(248, 189, 26);
+    }
+    #reg{
+        text-align:right;
+        font-size: 12px;
+    }
+    #reg a{
+        text-decoration: none;
+        color: rgb(65, 53, 53);
+    }
+    #reg a:hover{
+        text-decoration-line: underline;
+        color:  rgb(248, 189, 26);
+    }
+    #log div{
+        margin: 15px;
+    }
+    .bottom img{
+        border-radius: 50%;
+        margin-top:30px;
+    }
+    #log .bottom{
+        margin-left : 112px;
+    }
+    #login button,#login{
+        cursor: pointer;
+        outline: none;
+
+    }
+    </style>
+</head>
+<body>
+    {% if text %}
+        <script>
+            alert('{{ text }}')
+        </script>
+    {% endif %}
+    <img id="img" width="100%" src="/static/imgs/登录背景图片.jpg" alt="">
+    <div id="log">
+        <div class="top">
+            <span>登录</span>
+            <a id="close" href="">×</a>
+        </div>
+        <form method="post" action="/user/login" onsubmit='return login();'>
+            {% csrf_token %}
+            <div>
+                <img src="/static/imgs/登录用户图片.PNG" alt=""><input type="text" value="{{ name }}" name="username" id="username" placeholder="请输入用户名">
+            </div>
+            <div>
+                <img src="/static/imgs/登录密码图片.PNG" alt=""><input type="password" name="userpass" id="userpass" placeholder="请输入密码">
+            </div>
+
+            <div id="reg">
+                <a href="/user/register">免费注册</a>
+            </div>
+            <div id="login">
+                <button>登录</button>
+            </div>
+        </form>
+        <div class="bottom">
+            <img src="/static/imgs/登录下方qq图片.jpg" alt="">
+            <img src="/static/imgs/登陆下方微信图片.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
