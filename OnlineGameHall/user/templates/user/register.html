@@ -91,6 +91,7 @@
         background-color: orange;
         width: 330px;
         height: 40px;
+        line-height: 40px;
     }
     #fs:hover{
         color: red;
@@ -103,7 +104,12 @@
         font-size: 10px;
         color: aquamarine;
     }
+    #lll{
+        display: none;
+    }
     </style>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/jQuery.md5.js"></script>
     <script src="/static/js/common.js"></script>
 </head>
 <body>
@@ -142,18 +148,23 @@
             <div class="p4">
                 <label for="">邮箱 :&nbsp;</label>
                 <input id="na" type="text" placeholder="使用QQ邮箱验证" name="email">
-                <span id="fs" onclick="get_Xhr()">发送</span>
+                <span id="fs" onclick="get_email()">发送</span>
             </div>
             <div class="p5">
                 <label for="">验证码 :&nbsp;</label>
                 <input type="text" placeholder="请输入收到的验证码" name="yzm">
             </div>
-            
-            <input class="zhuce" type="submit" value="注册">
+            {% csrf_token %}
+            <span onclick="dlpd()" class="zhuce">注册</span>
+            <button id="lll"></button>
         </div>
     </form>
     <script>
-        function get_Xhr() {
+        $(function () {
+           $("#dla").val('') ;
+           $("#dla").val('') ;
+        });
+        function get_email() {
             var yx = document.getElementById('na').value;
             //1.创建xhr
             var xhr = createXhr();
@@ -200,7 +211,23 @@
             }
 
         }
+        function dlpd() {
+            var yan = 'AID1907';
+            pwd = $("#dla");
+            pwd2 = $("#dlb");
+            if (pwd.val().length < 5 || pwd2.val().length < 5){
+                alert('密码不能小于五位');
+                return null
+            }
+            else if (pwd.val().indexOf(" ") !== -1 || pwd2.val().indexOf(" ") !== -1){
+                alert('密码不能有空格');
+            }
+            else {
+                pwd.val($.md5(pwd.val() + yan));
+                pwd2.val($.md5(pwd2.val() + yan));
+                $('#lll').trigger("click");
+            }
+        }
     </script>
-
 </body>
 </html>

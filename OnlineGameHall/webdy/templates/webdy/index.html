@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小游戏</title>
+    <style>
+    #nav{
+        overflow: hidden;
+        margin: 0 auto;
+        background-color: rgb(250, 213, 157);
+    }
+    #nav .nav_logo{
+        float: left;
+        margin-left: 250px;
+        width: 120px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+    }
+    #nav .nav_ul{
+        float: left;
+        width: 740px;
+        height: 100px;
+        list-style-type: none;
+        overflow: hidden;
+        margin: 0;
+    }
+    #nav .nav_ul>li{
+        float: left;
+        font-size: 20px;
+        color: rgb(65, 63, 63);
+        line-height: 100px;
+        width: 120px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    #nav .nav_ul>li>a{
+        text-decoration: none;
+        color: black;
+    }
+    #nav .nav_ul>li>a:hover{
+        color: coral;
+        border-bottom: solid 2px coral;
+        font-size: 30px;
+    }
+    #nav .nav_login{
+        float: left;
+        width:120px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+    }
+    #nav .nav_login>a{
+        text-decoration: none;
+        color: black;
+    }
+    #nav .nav_login>a:hover{
+        color: coral;
+    }
+    #left{
+        float: left;
+        width: 1300px;
+        height: 600px;
+        border: solid 1px black;
+    }
+    #left .next{
+        width: 70px;
+        height: 600px;
+        font-size: 40px;
+        line-height: 600px;
+        text-align: center;
+        opacity: 0;
+        float: right;
+    }
+    #left .next:hover{
+        color: rgb(138, 132, 132);
+        opacity: 0.8;
+    }
+    #left .search-box{
+        position: absolute;
+        bottom: 10%;
+        left: 1%;
+        /* transform: translate(-50%,-50%); */
+        background: #2f3640;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+    }
+    #left .search-box:hover > .search-txt{
+        width: 240px;
+        padding: 0 6px;
+    }
+    #left .search-box:hover > .search-btn{
+        background: white;
+    }
+    #left .search-btn{
+        color: #e84118;
+        float: right;
+        width:40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #2f3640;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+    #left .search-txt{
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: white;
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0;
+
+    }
+    #left .title{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        border: solid 1px black;
+    }
+    #left .title_name{
+        display: inline-block;
+        line-height: 50px;
+        font-size: 20px;
+        color: red;
+    }
+    #right{
+        float: left;
+        width: 200px;
+        height: 600px;
+    }
+    #right .user_img{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 20px;
+        border: solid 1px black;
+    }
+    #right p{
+        font-size: 20px;
+        margin-top: 250px;
+        margin-left: 90px;
+    }
+    #right .like,.message, #message{
+        width: 50px;
+        height: 50px;
+        margin-top: 60px ;
+        margin-left: 80px;
+        cursor: pointer;
+    }
+    #right .like_num,.message_num{
+        color: darkgrey;
+    }
+    #comment{
+        float: left;
+        width: 1500px;
+        border:solid 1px coral;
+        display: none;
+    }
+    #comment .user_pinglun{
+        overflow: hidden;
+        width: 600px;
+        overflow-wrap: break-word;
+        /* border: solid 1px black; */
+    }
+    #comment .pinglun_img{
+        width: 50px;
+        height: 50px;
+        border: solid 1px black;
+        float: left;
+        border-radius: 50%;
+    }
+    #comment .pinglun_user{
+        display: inline-block;
+        float: left;
+        margin: 15px 5px;
+        color: blue;
+    }
+    /* #comment .pinglun_comment{
+        color: chocolate;
+    } */
+    #comment .pinglun_reply{
+        float: right;
+        list-style-type: none;
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+        margin-right: 20px;
+    }
+    #comment .pinglun_reply:hover{
+        color: cornflowerblue;
+    }
+
+    #comment .user_pinglun2{
+        overflow: hidden;
+        width: 600px;
+        overflow-wrap: break-word;
+        margin-left: 40px;
+        background-color: rgb(214, 211, 211);
+        /* border: solid 1px black; */
+    }
+    #comment .pinglun_img2{
+        width: 50px;
+        height: 50px;
+        border: solid 1px black;
+        float: left;
+        border-radius: 50%;
+    }
+    #comment .pinglun_user2{
+        display: inline-block;
+        float: left;
+        margin: 15px 5px;
+        color: blue;
+    }
+    /* #comment .pinglun_comment2{
+        color: chocolate;
+    } */
+    #comment .pinglun_reply2{
+        float: right;
+        list-style-type: none;
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+        margin-right: 20px;
+    }
+    #comment .pinglun_reply2:hover{
+        color: cornflowerblue;
+    }
+
+    #zou{
+        color: red;
+        cursor: pointer;
+    }
+    #sspp{
+        width: 1302px;
+        height: 602px;
+        margin-top: -52px;
+    }
+    </style> 
+    <script src="/static/js/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div id="nav" style=" height: 100px;">
+        <div class="nav_logo"> XXX小游戏</div>
+        <ul class="nav_ul">
+            <li><a href="">游戏首页</a></li>
+            <li><a href="">小视频</a></li>
+            <li><a href="">充值中心</a></li>
+            <li><a href="">历史游玩</a></li>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">个人中心</a></li>
+        </ul>
+        <div class="nav_login">
+            <a href="#">欢迎登录</a>
+            <a href="#">退出</a>
+        </div>
+    </div>
+      
+
+    <div id="left">
+        <div class="title">
+            <span class="title_name" id="spmc">视频名称</span>
+        </div>
+        <video id="sspp" controls autoplay name="media">
+
+        </video>
+
+        <div class="next">
+            <span id="zou">点</span>
+        </div>
+
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <a class="search-btn" href="#"></a>
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        var main = function () {
+                $.get('/webdy/get_sp', function (data) {
+                    var dx = data.data;
+                    var sou = document.createElement('source');
+                    sou.id = 'sp';
+                    sou.type = 'video/mp4';
+                    sou.src = dx.video;
+                    $("#sspp").append(sou);
+                    var d = document.createElement('div');
+                    var str = '<img class="user_img" src="/' + dx.u_tx + '" alt=""><p>' + dx.u_name + '</p><img class="like" src="/static/imgs/喜欢.png" alt="" title="点赞"><span class="like_num">' + dx.dzs + '</span><img id="message"src="/static/imgs/消息.png" alt="" title="评论"><span class="message_num">' + dx.pls + '</span>';
+                    d.innerHTML = str;
+                    d.id = 'right';
+                    $("body").append(d);
+                    $('#spmc').text(dx.v_jj);
+
+                    $.get('/webdy/get_pl', {'video': dx.v_id}, function (data) {
+                        var pldx = data.date;
+                        var pldiv = document.createElement('div');
+                        pldiv.id = 'comment';
+                        var str = '';
+                        $.each(pldx, function (z, sy) {
+                            str += '<div class="user_pinglun"><img class="pinglun_img" src=/' + sy.user_tx + ' alt="">';
+                            str += '<span class="pinglun_user">' + sy.username + '&nbsp;:</span>';
+                            str += '<p class="pinglun_comment">&nbsp;' + sy.pl + '</p>';
+                            str += '<a href="" class="pinglun_reply">回复</a></div>';
+                            $.each(sy.zpl, function (y, ob) {
+                                str += '<div class="user_pinglun2"><img class="pinglun_img2" src=/' + ob.user_tx + ' alt="">';
+                                str += '<span class="pinglun_user2">' + ob.username + '&nbsp;:</span>';
+                                str += '<p class="pinglun_comment2">&nbsp;' + ob.pl + '</p></div>';
+                            })
+                        });
+                        pldiv.innerHTML = str;
+                        $("body").append(pldiv);
+
+                        var comm = $("#comment")[0];
+                        $("#message").click(function () {
+                            if (comm.style.display === 'none') {
+                                comm.style.display = 'block';
+                            } else {
+                                comm.style.display = 'none';
+                            }
+
+                        })
+                    }, 'json');
+                }, 'json');
+            };
+        $(function () {
+            main();
+            $("#zou").click(function () {
+                window.location.reload()
+            })
+        });
+
+
+    </script>
+
+
+</body>
+</html>

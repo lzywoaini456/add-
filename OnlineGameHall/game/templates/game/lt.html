@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <style>
+        #gd{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 700px;
+            background-color: aquamarine;
+        }
+        #gd>ul{
+            list-style-type: none;
+            background-color: aqua;
+            width: 450px;
+            height: 618px;
+            border-bottom: 2px solid #666;
+        }
+        #gd>ul>li{
+            margin-left: -40px;
+            display: block;
+            height: 60px;
+            font-size: 25px;
+            line-height: 60px;
+            padding-left: 6px;
+            border: solid 2px #666 ;
+            border-bottom: 0;
+        }
+        .a{
+            color: red;
+        }
+        .b{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="gd">
+        <ul id="gdul">
+        </ul>
+        <input id="wb" type="text">
+        <button id="fs">发送</button>
+    </div>
+    <div id="dm">
+
+    </div>
+    <script>
+
+
+        $(function () {
+            var fs = $('#fs');
+            fs.click(function () {
+                fs.attr({disable:'disabled'});
+                $.get('/game/fs_xx',{xx: $("#wb").val()},function () {},'text');
+
+
+
+            });
+
+
+            var hs = function(){
+                $.get('/game/get_xx',function (data) {
+                    var a = '';
+                    $.each(data, function (i, obj) {
+                        a += '<li><span class="a">' + obj.tx + '</span><span class="b">' + obj.xx + '</span></li>'
+                    });
+                    $("#gdul").html(a)
+                }, 'json');
+            };
+
+
+            setInterval(function(){
+                hs();
+            },2000);
+        })//页面加载完成
+    </script>
+</body>
+</html>

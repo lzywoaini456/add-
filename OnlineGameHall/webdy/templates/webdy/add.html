@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传文件</title>
+    <style>
+        #top{
+            border: white solid 0;
+            position:absolute;
+            left: 40%;
+            top: 100px;
+        }
+        #top span{
+            display: inline-block;
+            font-size: 28px;
+        }
+        #top input{
+            display: inline-block;
+            font-size: 28px;
+        }
+        #top button{
+            display: inline-block;
+            font-size: 28px;
+        }
+        .por span{
+            display: inline-block;
+            font-size: 28px;
+        }
+        #body{
+            background:url("/static/imgs/02-1.png") no-repeat center center fixed;
+            background-size:cover;
+            position: relative;
+            width: 100%;
+            height: 840px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="body">
+<!--        <img src="/static/image/02-1.png">-->
+        <div id="top">
+            <h1>发布（上传）</h1>
+            <div>
+                <form action="return upload()" method="POST">
+                    <input type="file">
+                    <div class="por">
+                        <input type="radio" name="ea" value="live"><span>生活</span>
+                        <input type="radio" name="ea" value="game"><span>游戏</span>
+                        <input type="radio" name="ea" value="make"><span>自制</span>
+                        <input type="radio" name="ea" value="catton"><span>动漫</span>
+                        <input type="radio" name="ea" value="movie"><span>影视</span>
+                    </div>
+                    <div><input id="btn" type="submit" value="发布（上传）"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('#btn').click(function(){
+        post_data ={'check': $(':radio[name="ea"]:checked').val()}
+        $.ajax({
+            // 请求方式
+            type:"post",
+            // contentType
+            contentType:"application/json",
+            // dataType
+            dataType:"json",
+            // url
+            url:"http://127.0.0.1:8000/user/getfile",
+            // 把JS的对象或数组序列化一个json 字符串
+            data:JSON.stringify(post_data),
+            // result 为请求的返回结果对象
+            success:function (result) {
+                if (200 == result.code){
+                    alert("上传成功")
+                }else{
+                    alert(result.error)
+                }
+            }
+        });
+    })
+</script>
+
+</html>

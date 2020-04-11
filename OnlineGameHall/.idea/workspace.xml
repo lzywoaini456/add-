@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f206347-f621-41a3-80d1-4884a4268064" name="Default Changelist" comment="" />
+    <list default="true" id="7f206347-f621-41a3-80d1-4884a4268064" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineGameHall/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middelware/mymiddleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/dz.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/page3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/喜欢.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/消息.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jQuery.md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/tx/mr.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/video/Game/001.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/video/life/002.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webdy/task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webdy/templates/webdy/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webdy/templates/webdy/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webdy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OnlineGameHall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OnlineGameHall.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineGameHall/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineGameHall/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineGameHall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineGameHall/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineGameHall/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineGameHall/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineGameHall/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineGameHall/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/middelware/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/qincai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/登录下方qq图片.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/登录下方qq图片.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/登录密码图片.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/登录密码图片.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/登录用户图片.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/登录用户图片.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/登录背景图片.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/登录背景图片.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/登陆下方微信图片.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/登陆下方微信图片.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-1.11.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-1.11.3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/grzy.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/grzy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uwsgi.ini" beforeDir="false" afterPath="$PROJECT_DIR$/uwsgi.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uwsgi.log" beforeDir="false" afterPath="$PROJECT_DIR$/uwsgi.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uwsgi.pid" beforeDir="false" afterPath="$PROJECT_DIR$/uwsgi.pid" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,16 +84,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1SeJqZmXoqKV3yT5RwNQTdQxIP8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -45,14 +108,17 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/user/templates/user" />
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/video/life" />
+      <recent name="$PROJECT_DIR$/static/video/Game" />
+      <recent name="$PROJECT_DIR$/static/imgs" />
+      <recent name="$PROJECT_DIR$/webdy/templates/webdy" />
+      <recent name="$PROJECT_DIR$/static/video/KaTong" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -67,7 +133,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.views">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OnlineGameHall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webdy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webdy/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="OnlineGameHall" type="Python.DjangoServer" factoryName="Django server">
       <module name="OnlineGameHall" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +179,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -111,10 +204,62 @@
       <workItem from="1572016796034" duration="3953000" />
       <workItem from="1572021023209" duration="4770000" />
       <workItem from="1572060622936" duration="4161000" />
+      <workItem from="1572069506205" duration="909000" />
+      <workItem from="1572071611986" duration="3888000" />
+      <workItem from="1572168195114" duration="6690000" />
+      <workItem from="1572175199250" duration="9226000" />
+      <workItem from="1572228140373" duration="691000" />
+      <workItem from="1572269281166" duration="8290000" />
+      <workItem from="1572278692323" duration="1171000" />
+      <workItem from="1572311430113" duration="622000" />
+      <workItem from="1572322591631" duration="6328000" />
+      <workItem from="1572328977487" duration="1825000" />
+      <workItem from="1572331864661" duration="2007000" />
+      <workItem from="1572334164434" duration="700000" />
+      <workItem from="1572337894260" duration="12000" />
+      <workItem from="1572445948795" duration="5275000" />
+      <workItem from="1572484360668" duration="19000" />
+      <workItem from="1572498132283" duration="133000" />
+      <workItem from="1572499029826" duration="2119000" />
+      <workItem from="1572508006105" duration="32000" />
+      <workItem from="1572522627196" duration="15157000" />
+      <workItem from="1572537799072" duration="5223000" />
+      <workItem from="1572569338905" duration="42000" />
+      <workItem from="1572569393692" duration="97000" />
+      <workItem from="1572577991214" duration="97000" />
+      <workItem from="1573538587379" duration="31000" />
+      <workItem from="1573559524475" duration="3379000" />
+      <workItem from="1573562920004" duration="3715000" />
+      <workItem from="1573567125890" duration="612000" />
+      <workItem from="1573635352134" duration="633000" />
+      <workItem from="1573621471368" duration="2836000" />
+      <workItem from="1573624782377" duration="1260000" />
+      <workItem from="1573632953325" duration="1356000" />
+      <workItem from="1573634333774" duration="8000" />
+      <workItem from="1573634373603" duration="3000" />
+      <workItem from="1573643495069" duration="7109000" />
+      <workItem from="1573652766027" duration="12564000" />
+      <workItem from="1573693413307" duration="578000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OnlineGameHall$views.coverage" NAME="views Coverage Results" MODIFIED="1573644649753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webdy" />
   </component>
 </project>

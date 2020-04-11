@@ -1,12 +1,25 @@
 """
     视图函数
 """
+from django.contrib.sessions.models import Session
+from django.utils import timezone
+from django.db.models import Q
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core import mail
 from .models import User
+from webdy.task import task_test
 import random
+
 # Create your views here.
+
+
+def login_ii(func):
+    def ooo(request, *args, **kwargs):
+        if request.session.get('u_name') and request.session.get('u_id'):
+            return HttpResponseRedirect('/user/grzy')
+        return func(request, *args, **kwargs)
+    return ooo
 
 
 def index_view(request):
@@ -16,9 +29,8 @@ def index_view(request):
     :return: 主页内容
     """
     if request.method == "GET":
-        pass
-
-
+        return render(request, 'user/index.html')
+@login_ii
 def login_view(request):
     """
     登陆视图
@@ -40,12 +52,14 @@ def login_view(request):
             return render(request, 'user/login.html', {'text': '用户名或密码错误', 'name': name})
         if yh.u_pass != pass_wd:
             return render(request, 'user/login.html', {'text': '用户名或密码错误', 'name': name})
-        if request.session.get('ip', 0):
-            return render(request, 'user/login.html', {'text': '用户名以登陆', 'name': name})
-        request.session['ip'] = request.META['REMOTE_ADDR']
         request.session['u_name'] = yh.u_name
         request.session['u_id'] = yh.id
-        return HttpResponseRedirect('/user/grzy')
+        session_key = request.session.session_key
+        for session in Session.objects.filter(~Q(session_key=session_key), expire_date__gte=timezone.now()):
+            data = session.get_decoded()
+            if data.get('u_id', None) == request.session.get('u_id'):
+                session.delete()
+        return HttpResponseRedirect('/user/index')
 
 
 def get_email_view(request):
@@ -55,9 +69,7 @@ def get_email_view(request):
             return HttpResponse('没有该邮箱')
         if User.objects.filter(u_email=email):
             return HttpResponse('邮箱以注册')
-        email_list = []
-        [i for i in range(6) if email_list.append(str(random.randint(0, 9)))]
-        yzm = ''.join(email_list)
+        yzm = str(random.randint(100000, 999999))
         try:
             mail.send_mail(
                 subject='AID1907网络游戏厅注册',  # 题目
@@ -79,19 +91,20 @@ def register_view(request):
     :return:
     """
     if request.method == "GET":
-
         return render(request, 'user/register.html')
     elif request.method == "POST":
         name = request.POST.get('username')
         pass_wd1 = request.POST.get('password1')
+
         pass_wd2 = request.POST.get('password2')
+
         email = request.POST.get('email')
+
         yzm = request.POST.get('yzm')
         if not name:
             return render(request, 'user/register.html', {'text': '请输入用户名'})
         elif name.find(' ') >= 0:
             return render(request, 'user/register.html', {'text': '名字不允许有空格'})
-
         elif User.objects.filter(u_name=name):
             return render(request, 'user/register.html', {'text': '此用户以经被注册'})
         elif not email:
@@ -109,24 +122,26 @@ def register_view(request):
         elif request.session.get('email') != email or request.session.get('yzm') != yzm:
             return render(request, 'user/register.html', {'text': '验证码错误', 'name': name})
         try:
-            User.objects.create(u_name=name, u_pass=pass_wd1, u_email=email)
-        except:
-            render(request, 'user/register.html', {'text': '此用户以经被注册'})
+            print(name)
+            print(pass_wd1)
+            print(pass_wd2)
+            print(email)
+            User.objects.create(u_name=name, u_pass=pass_wd1, u_email=email, u_tx='/static/tx/mr')
+        except Exception as e:
+            print('******************************')
+            print(e)
+            print('****************************************************************')
+            return render(request, 'user/register.html', {'text': '此用户以经被注册'})
         request.session['u_name'] = name
         request.session['u_id'] = User.objects.get(u_name=name).id
-        return HttpResponseRedirect('/user/grzy')
+
+        return HttpResponseRedirect('/game/lt.html')
 
 
 def grzy_view(request):
-    if request.method == 'GET':
-        try:
-            user = User.objects.get(id=request.session['u_id'])
-            vip = user.u_vip
-        except Exception as e:
-            print(e)
-            return HttpResponse('请登录')
-        return render(request, 'user/grzy.html', locals())
-
+    task_test.delay()
+    print(111111)
+    return JsonResponse({'code': 200})
 
 def get_xx_view(request):
     if request.method == "GET":
